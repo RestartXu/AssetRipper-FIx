@@ -29,14 +29,11 @@ namespace AssetRipper.Export.UnityProjects
 			{
 				foreach (IUnityObjectBase asset in collection.Assets)
 				{
-					if (!m_assetCollections.ContainsKey(asset))
-{
-    m_assetCollections.Add(asset, collection);
-}
-else
-{
-    
-}
+	                CheckIfAlreadyAdded(this, asset, collection);
+ 					m_assetCollections.Add(asset, collection);
+					//if (!m_assetCollections.ContainsKey(asset))
+                    //{m_assetCollections.Add(asset, collection);}
+                    //else{}
 
 				}
 				if (collection is SceneExportCollection scene)
